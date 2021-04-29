@@ -11,12 +11,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class HelloController extends AbstractController
 {
     /**
-     * @Route(path="/hi", name="hello")
+     * @Route(path="/hi/{name}", name="hello")
      * @return Response
      */
-    public function hi(Request $request) : Response
+    public function hi(string $name) : Response
     {
-        $name = $request->get('imie', 'Brak podanego parametru Imię');
+        //$name = $request->get('imie', 'Brak podanego parametru Imię');
         $helloWorld = 'Cześć ' . $name;
         return new Response('<html><body>' . $helloWorld . '</body></html>');
     }
@@ -29,11 +29,6 @@ class HelloController extends AbstractController
      */
     public function moveToAction(string $action): RedirectResponse
     {
-        if ('hello' == $action) {
-            return $this->redirectToRoute('hello', ['imie' => 'Some name']);
-        } else if ('currentDate' == $action) {
-            return $this->redirectToRoute('currentDate');
-        }
-        throw new \Exception('Wrong action');
+        return $this->redirectToRoute($action, ['name' => 'Some name']);
     }
 }
