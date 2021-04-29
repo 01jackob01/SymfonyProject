@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CurrentDateController
 {
     /**
-     * @Route(path="/index")
+     * @Route(path="/index", name="currentDate")
      * @return Response
      */
     public function main() : Response
