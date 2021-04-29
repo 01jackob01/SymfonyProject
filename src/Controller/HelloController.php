@@ -8,6 +8,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class HelloController
+ * @package App\Controller
+ * @Route("/page")
+ */
 class HelloController extends AbstractController
 {
     /**
