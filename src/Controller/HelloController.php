@@ -22,8 +22,9 @@ class HelloController extends AbstractController
     public function hi(string $name) : Response
     {
         //$name = $request->get('imie', 'Brak podanego parametru Imię');
-        $helloWorld = 'Cześć ' . $name;
-        return new Response('<html><body>' . $helloWorld . '</body></html>');
+        //$helloWorld = 'Cześć ' . $name;
+        //return new Response('<html><body>' . $helloWorld . '</body></html>');
+        return $this->render('hello/hi.html.twig', ['name' => $name]);
     }
 
     /**

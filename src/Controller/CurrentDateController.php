@@ -23,7 +23,7 @@ class CurrentDateController
     }
 
     /**
-     * @Route(path="index", name="tommorowDate", methods={"GET"})
+     * @Route(path="/", name="tommorowDate", methods={"GET"})
      * @return Response
      */
     public function tommorowDate(): Response
